@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Group Discussion VC</title>
+  <link rel="stylesheet" href="video.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Video Section -->
+    <div class="video-section">
+      <h2>Group Discussion Video Call</h2>
+      <div class="videos">
+        <video id="localVideo" autoplay muted></video>
+        <video id="remoteVideo" autoplay></video>
+      </div>
+      <div class="video-controls">
+        <button onclick="startCall()">Start Call</button>
+        <button onclick="startRecording()">Start Recording</button>
+        <button onclick="stopRecording()">Stop Recording</button>
+        <a id="downloadLink" href="#" download="gd_recording.webm" style="display:none;">Download Recording</a>
+      </div>
+    </div>
+
+    <!-- Chat + AI Section -->
+    <div class="side-panel">
+      <!-- Chat Box -->
+      <div class="chat-section">
+        <h3>Chat Box</h3>
+        <div id="chatMessages" class="chat-messages"></div>
+        <input type="text" id="chatInput" placeholder="Type a message..."/>
+        <button onclick="sendMessage()">Send</button>
+      </div>
+
+      <!-- AI Co-Pilot -->
+      <div class="ai-box">
+        <h3>AI Co-Pilot</h3>
+        <textarea id="aiQuestion" placeholder="Ask AI about the topic..."></textarea>
+        <button onclick="askAI()">Ask AI</button>
+        <button onclick="suggestTopic()">Suggest Topic</button>
+        <div id="aiResponse" class="ai-response"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="video.js"></script>
+</body>
+</html>
